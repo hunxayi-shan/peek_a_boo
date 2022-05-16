@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon"
+            href="https://cdn.dribbble.com/users/2795981/screenshots/11889451/media/e9ea0372a65e27b10f3c3de47ae5afcd.jpg">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+        <script src="/jquery-3.6.0.min.js"></script>
+        <title>Peek-A-Boo</title>
+        <style>
+            h1 {
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                color: white;
+                text-decoration: underline white;
+                font-weight: 800;
+                margin: 20px 0 20px 0;
+            }
+
+            .flex {
+                padding: 2em 2em 2em 2em;
+                display: flex;
+                flex-flow: wrap row;
+                text-align: center;
+                margin: 3px 3px 3px 3px;
+                color: white;
+                font-size: 15px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            #color1 {
+                border: 1px solid black;
+                background-color: rgb(194, 165, 2);
+            }
+
+            #color2 {
+                border: 1px solid black;
+                background-color: red;
+            }
+
+            #color3 {
+                border: 1px solid black;
+                background-color: purple;
+            }
+
+            #color4 {
+                border: 1px solid black;
+                background-color: magenta;
+            }
+
+            .no-border {
+                border: none;
+            }
+
+            .margin-btn {
+                margin: 0 2px 0 2px;
+            }
+        </style>
+    </head>
+
+    <body class="bg-dark">
+        <h1><strong>Playground</strong></h1>
+        <div class="container">
+            <div class="btn-group flex">
+                <button class="btn btn-primary category-button bg-success no-border margin-btn"
+                    data-filter="all">All</button>
+                <button class="btn btn-primary category-button bg-success no-border margin-btn"
+                    data-filter="category1">Cat 1</button>
+                <button class="btn btn-primary category-button bg-success no-border margin-btn"
+                    data-filter="category2">Cat 2</button>
+                <button class="btn btn-primary bg-success category-button no-border margin-btn"
+                    data-filter="category3">Cat 3</button>
+                <button class="btn btn-primary bg-success category-button no-border margin-btn"
+                    data-filter="category4">Cat 4</button>
+            </div>
+            <div class="row all category1 flex" id="color1">
+                <div class="col-sm-4">
+                    Col1
+                </div>
+                <div class="col-sm-4">
+                    Col2
+                </div>
+                <div class="col-sm-4">
+                    Col3
+                </div>
+            </div>
+            <div class="row all category2 color2 flex" id="color2">
+                <div class="col-sm-4">
+                    Col1-1
+                </div>
+                <div class="col-sm-4">
+                    Col1-2
+                </div>
+                <div class="col-sm-4">
+                    Col1-3
+                </div>
+            </div>
+            <div class="row all category3 flex" id="color3">
+                <div class="col-sm-4">
+                    Col2-1
+                </div>
+                <div class="col-sm-4">
+                    Col2-2
+                </div>
+                <div class="col-sm-4">
+                    Col2-3
+                </div>
+            </div>
+            <div class="row all category4 flex" id="color4">
+                <div class="col-sm-4">
+                    Col3-1
+                </div>
+                <div class="col-sm-4">
+                    Col3-2
+                </div>
+                <div class="col-sm-4">
+                    Col3-4
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $(".category-button").click(function () {
+                    var filter = $(this).attr("data-filter");
+                    if (filter == "all") {
+                        $(".all").show("slow");
+                    }
+                    else if (filter == "category1") {
+                        $(".all").hide("slow");
+                        $(".category1").show("slow");
+                    }
+                    else if (filter == "category2") {
+                        $(".all").hide("slow");
+                        $(".category2").show("slow");
+                    }
+                    else if (filter == "category3") {
+                        $(".all").hide("slow");
+                        $(".category3").show("slow");
+                    }
+                    else if (filter == "category4") {
+                        $(".all").hide("slow");
+                        $(".category4").show("slow");
+                    }
+                })
+            })
+        </script>
+    </body>
+
+</html>
